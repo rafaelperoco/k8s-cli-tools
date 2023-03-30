@@ -64,3 +64,12 @@ curl -OL https://github.com/kubernetes-sigs/kind/releases/download/v0.17.0/kind-
 chmod +x ./kind-${SYS_TYPE}-${PROC_TYPE}
 mv ./kind-${SYS_TYPE}-${PROC_TYPE} ./kind
 fi
+
+if [ -f ./kconf ]; then
+  echo "kconf already exists"
+else
+curl -LO https://github.com/particledecay/kconf/releases/download/v1.12.0/kconf-${SYS_TYPE}-${PROC_TYPE}-1.12.0.tar.gz
+tar -xzf kconf-${SYS_TYPE}-${PROC_TYPE}-1.12.0.tar.gz
+rm kconf-${SYS_TYPE}-${PROC_TYPE}-1.12.0.tar.gz
+chmod +x ./kconf
+fi
